@@ -1,0 +1,109 @@
+.tabs {
+    display:flex;
+    padding: 10px;
+    background-color: rgba(white, 0.25);
+    backdrop-filter: blur(5px);
+    border-radius: 12px;
+    gap:14px;
+    margin: 12px;
+    margin-top: 50px;
+    
+}
+
+
+
+.tab-tile {
+    display: flex;
+    padding: 18px;
+    // background: linear-gradient(45deg, #f8b5a5, #e2d2fd);
+    // border-radius: 10px;
+    cursor: pointer;
+    //adds the bounce upwards
+    transition: all 0.4s cubic-bezier(0, 0, 0, 2);
+    opacity: 0.7;
+
+    span {
+        color: #222;
+    }
+    
+}
+
+.tab {
+    position: relative;
+    z-index: 1;
+    text-decoration: none;
+}
+
+//when the tab is clicked, this raises the icon upwards and turns on full opacity
+.tab.selected .tab-tile {
+    // transform: translateY(-30px);
+    transform: translateY(-50%);
+    opacity: 1;
+    
+  
+}
+
+//styles for the tab tile background 'shape'
+.tab-tile ::before {
+    content: '';
+    position: absolute;
+    top:0;
+    left:0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    border-radius: 10px;
+}
+
+.bookmarks-tab .tab-tile ::before {
+    background: linear-gradient(45deg, #eff5f8, #62add8,#326684);
+}
+
+.to-dos-tab .tab-tile ::before {
+    background: linear-gradient(45deg, #326684, #62add8,#eff5f8);
+}
+
+.notes-tab .tab-tile ::before {
+    background: linear-gradient(60deg, #326684, #62add8,#eff5f8);
+}
+
+.tab-tile:hover {
+    transform: scale(1.1);
+    opacity: .8;
+}
+
+.tab.selected .tab-tile ::before {
+    border-radius: 50px;
+    transform: scale(1.1);
+    box-shadow: 0px 7px 17px rgba(rgb(0, 0, 0), 0.4);
+    transition-delay: .035s;
+
+}
+//end of tab tile background 'shape' styles
+
+
+//styles for the underline effect 
+
+.tab::after {
+    content:'';
+    border-radius: 5px;
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    right: 0;
+    height: 3px;
+    width: 50%;
+    margin: auto;
+    background-color: rgba(rgb(249, 245, 245), 0.85);
+    transition:all 0.3s;
+
+    //default hidden state
+    opacity: 0;
+    transform: scaleX(0);
+}
+.tab.selected::after {
+    opacity: 1;
+    transform: scaleX(1);
+    transition-delay: .08s;
+}
+.tab.selected { outline:none;}
