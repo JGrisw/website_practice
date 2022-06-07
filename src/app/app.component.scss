@@ -2,8 +2,9 @@
     display: flex;
     flex-direction: column;
     height: 100%;
-    
-        background: url('https://images.pexels.com/photos/109243/pexels-photo-109243.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
+        background: url('https://images.unsplash.com/photo-1487967380170-6de32c5fdf43?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2832&q=80');
+       
+
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
@@ -17,11 +18,11 @@
     padding: 100px 0;
 
     h1 {
-        font-size: 120px;
+        font-size: 90px;
         font-weight: bold;
-        color: #f8f1f1;
+        color: #40e0d0;
         text-shadow: 0px 1px 7px rgba(black, 0.4);
-        opacity: 70%;
+        opacity: 50%;
     }
     h2{
         font-size: 28px;

@@ -9,6 +9,7 @@
 
 html {
     font-family: 'inter', sans-serif;
+    color: #222;
 }
 
 html, body {
@@ -20,6 +21,14 @@ h1 {
     font-size: 48px;
 }
 
+
+h1.is-bold,
+h2.is-bold{
+    font-weight: bold;
+    letter-spacing: -2px;
+    margin-bottom: 25px;
+}
+
 h2 {
     font-size: 40px;
 }
@@ -28,3 +37,78 @@ h2 {
     max-width: 850px;
     margin: auto;
 }
+
+.btn {
+    display: inline-flex;
+    padding: 12px, 22px;
+    align-items: center;
+    background: rgba(black, .7);
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: 600;
+    font-family: inherit;
+    color: white;
+    font-size: 18px;
+
+    &:hover {
+        background: rgba(black, .85);
+        backdrop-filter: blur(2px);
+    }
+
+    &:active {
+        background: rgba(black, .9);
+    }
+}
+
+.buttons-container {
+    margin-top: 20px;
+    display: flex;
+
+    &.buttons-centered {
+        justify-content: center;
+    }
+
+    .align-end{
+        margin-left: auto;
+    }
+}
+
+.has-blurred-white-bg{
+    background: rgba(white, 0.85);
+    backdrop-filter: blur(20px);
+}
+
+.text-box,
+.textarea{
+    display: block;
+    font-size: 18px;
+    font-family: inherit;
+    width: 100%;
+    padding:5px, 10px ;
+    margin-bottom: 20px;
+
+    border: 2px solid rgba(black, .3);
+    border-radius: 4px;
+    background-color: rgba(white, 0.7);
+
+    &:hover{
+        background: rgba(white, 0.95);
+    }
+    &:focus{
+        background: white;
+        outline: none;
+    }
+
+    &:hover, 
+    &:focus{
+        border-color: rgba(black, .42);
+    }
+}
+
+.textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+

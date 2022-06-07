@@ -36,11 +36,8 @@
 
 //when the tab is clicked, this raises the icon upwards and turns on full opacity
 .tab.selected .tab-tile {
-    // transform: translateY(-30px);
     transform: translateY(-50%);
     opacity: 1;
-    
-  
 }
 
 //styles for the tab tile background 'shape'
@@ -56,15 +53,15 @@
 }
 
 .bookmarks-tab .tab-tile ::before {
-    background: linear-gradient(45deg, #eff5f8, #62add8,#326684);
+    background: linear-gradient(45deg, #40e0d0, #72b5b7,#40e0d0);
 }
 
 .to-dos-tab .tab-tile ::before {
-    background: linear-gradient(45deg, #326684, #62add8,#eff5f8);
+    background: linear-gradient(45deg, #40e0d0, #72b5b7,#40e0d0);
 }
 
 .notes-tab .tab-tile ::before {
-    background: linear-gradient(60deg, #326684, #62add8,#eff5f8);
+    background: linear-gradient(60deg, #40e0d0, #72b5b7,#40e0d0);
 }
 
 .tab-tile:hover {
@@ -75,7 +72,7 @@
 .tab.selected .tab-tile ::before {
     border-radius: 50px;
     transform: scale(1.1);
-    box-shadow: 0px 7px 17px rgba(rgb(0, 0, 0), 0.4);
+    box-shadow: 0px 7px 20px rgba(rgb(0, 0, 0), 0.4);
     transition-delay: .035s;
 
 }
@@ -94,7 +91,7 @@
     height: 3px;
     width: 50%;
     margin: auto;
-    background-color: rgba(rgb(249, 245, 245), 0.85);
+    background-color: rgba(rgb(251, 251, 251), 0.85);
     transition:all 0.3s;
 
     //default hidden state
