@@ -10,8 +10,6 @@
     
 }
 
-
-
 .tab-tile {
     display: flex;
     padding: 18px;
@@ -25,7 +23,6 @@
     span {
         color: #222;
     }
-    
 }
 
 .tab {
@@ -77,10 +74,7 @@
 
 }
 //end of tab tile background 'shape' styles
-
-
 //styles for the underline effect 
-
 .tab::after {
     content:'';
     border-radius: 5px;
@@ -93,7 +87,6 @@
     margin: auto;
     background-color: rgba(rgb(251, 251, 251), 0.85);
     transition:all 0.3s;
-
     //default hidden state
     opacity: 0;
     transform: scaleX(0);
