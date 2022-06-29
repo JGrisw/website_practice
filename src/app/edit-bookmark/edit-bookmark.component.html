@@ -1,0 +1,35 @@
+<div class="edit-bookmark-wrapper">
+    <h2 class="is-bold">Bookmark Name</h2>
+
+    <form #form="ngForm" ngNativeValidate (ngSubmit)="onFormSubmit(form)">
+        <div class="form-field">
+          <label class="form-label">Name</label>
+          <input
+            class="text-box"
+            ngModel
+            name="name"
+            #textField="ngModel"
+            type="text"
+            placeholder="e.g. Wikipedia"
+          />
+        </div>
+    
+        <div class="form-field">
+          <label class="form-label">URL</label>
+          <input
+            class="text-box"
+            ngModel
+            name="url"
+            #textField="ngModel"
+            type="url"
+            placeholder="e.g. https://wikipedia.org ..."
+            required
+          />
+        </div>
+    
+        <div class="buttons-container">
+          <a routerLink="Bookmarks" class="btn">Cancel</a>
+          <button class="btn align-end">Save</button>
+        </div>
+      </form>
+</div>
