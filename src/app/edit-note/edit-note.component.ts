@@ -1,3 +1,4 @@
+import { NotificationService } from './../shared/notification.service';
 import { NoteService } from './../shared/note.service';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
@@ -14,7 +15,11 @@ export class EditNoteComponent implements OnInit {
   showValidationErrors!: boolean;
   note: Note | any;
 
-  constructor(private route: ActivatedRoute, private noteService: NoteService, private router: Router) { }
+  constructor(
+    private route: ActivatedRoute, 
+    private noteService: NoteService, 
+    private router: Router, 
+    private notificationService: NotificationService) { }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe((paramMap: ParamMap)=> {
@@ -26,10 +31,12 @@ export class EditNoteComponent implements OnInit {
   onFormSubmit(form: NgForm){
     this.noteService.updateNote(this.note.id, form.value);
     this.router.navigateByUrl('notes');
+    this.notificationService.show('Edit Saved!');
   }
 
   deleteNote(){
     this.noteService.deleteNote(this.note.id);
-      this.router.navigateByUrl('/notes');
+    this.router.navigateByUrl('/notes');
+    this.notificationService.show('Deleted Boo....')
   }
 }

@@ -1,3 +1,4 @@
+import { NotificationService } from './../shared/notification.service';
 import { NoteService } from './../shared/note.service';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
@@ -13,7 +14,10 @@ export class AddNoteComponent implements OnInit {
 
   showValidationErrors!: boolean;
 
-  constructor(private noteService: NoteService, private router: Router) { }
+  constructor(
+    private noteService: NoteService, 
+    private router: Router,
+    private notificationService: NotificationService) { }
 
   ngOnInit(): void {
   }
@@ -24,6 +28,7 @@ export class AddNoteComponent implements OnInit {
     console.log(note);
     this.noteService.addNote(note);
     this.router.navigateByUrl('/notes');
+    this.notificationService.show('Note Created!')
   }
 
 }
