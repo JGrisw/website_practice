@@ -1,4 +1,6 @@
+import { BookmarkService } from './../shared/bookmark.service';
 import { Component, OnInit } from '@angular/core';
+import { Bookmark } from '../shared/bookmark.model';
 
 @Component({
   selector: 'app-manage-bookmarks',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ManageBookmarksComponent implements OnInit {
 
-  constructor() { }
+  bookmarks: Bookmark[];
+
+  constructor(private bookmarkService: BookmarkService) { }
 
   ngOnInit(): void {
+    this.bookmarks = this.bookmarkService.getBookmarks();
   }
 
 }
